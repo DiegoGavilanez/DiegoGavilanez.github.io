@@ -1,35 +1,59 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const langToggle = document.getElementById('lang-toggle');
-    let currentLang = 'es'; // Idioma por defecto
+const languageButtons = document.querySelectorAll("[data-lang]");
+const translatableElements = document.querySelectorAll("[data-es][data-en]");
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+const root = document.documentElement;
 
-    const translatePage = (lang) => {
-        // Buscar todos los elementos que tengan el atributo del idioma seleccionado
-        const textElements = document.querySelectorAll('[data-es]');
-        
-        textElements.forEach(el => {
-            if (lang === 'en') {
-                if (el.getAttribute('data-en')) {
-                    el.innerHTML = el.getAttribute('data-en');
-                }
-            } else {
-                if (el.getAttribute('data-es')) {
-                    el.innerHTML = el.getAttribute('data-es');
-                }
-            }
-        });
+function setLanguage(lang) {
+    const safeLang = lang === "en" ? "en" : "es";
 
-        // Actualizar el atributo lang del documento HTML
-        document.documentElement.lang = lang;
-    };
-
-    langToggle.addEventListener('click', () => {
-        if (currentLang === 'es') {
-            currentLang = 'en';
-            langToggle.textContent = 'ES'; // Muestra la opción para volver a Español
-        } else {
-            currentLang = 'es';
-            langToggle.textContent = 'EN'; // Muestra la opción para cambiar a Inglés
-        }
-        translatePage(currentLang);
+    translatableElements.forEach((element) => {
+        element.textContent = element.dataset[safeLang];
     });
+
+    languageButtons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.lang === safeLang);
+    });
+
+    root.lang = safeLang;
+    localStorage.setItem("portfolio-language", safeLang);
+}
+
+function closeMenu() {
+    if (!navLinks || !menuToggle) {
+        return;
+    }
+
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+}
+
+function animateIntegrationFlow() {
+    let shift = 0;
+
+    function draw() {
+        shift = (shift - 0.45) % 34;
+        root.style.setProperty("--flow-shift", shift.toFixed(2));
+        requestAnimationFrame(draw);
+    }
+
+    requestAnimationFrame(draw);
+}
+
+languageButtons.forEach((button) => {
+    button.addEventListener("click", () => setLanguage(button.dataset.lang));
 });
+
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+    });
+}
+
+setLanguage(localStorage.getItem("portfolio-language") || "es");
+animateIntegrationFlow();
