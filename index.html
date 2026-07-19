@@ -1,137 +1,202 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diego Gavilánez | Software Developer</title>
+    <title>Diego Gavilánez | Enterprise Solutions Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #030712;
+        }
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        .text-glow {
+            text-shadow: 0 0 40px rgba(255,255,255,0.15);
+        }
     </style>
 </head>
-<body class="bg-white text-[#111111] antialiased selection:bg-gray-100">
+<body class="text-gray-300 antialiased bg-grid-pattern min-h-screen flex flex-col justify-between">
+
+    <!-- TOP GLOW EFFECT -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[400px] bg-gradient-to-b from-blue-600/10 via-transparent to-transparent blur-3xl pointer-events-none"></div>
 
     <!-- NAVBAR -->
-    <header class="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
-        <a href="#" class="font-semibold text-lg tracking-tight">diegogavilanez.com</a>
-        <nav class="space-x-6 text-sm text-gray-500">
-            <a href="#sobre-mi" class="hover:text-black transition">Sobre mí</a>
-            <a href="#proyecto-destacado" class="hover:text-black transition">Caso de Estudio</a>
-            <a href="#contacto" class="hover:text-black transition">Contacto</a>
-        </nav>
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-backdrop border-b border-gray-800/40">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-bold text-white tracking-tight text-lg flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                diegogavilanez<span class="text-blue-500">.com</span>
+            </a>
+            <nav class="hidden sm:flex space-x-8 text-sm font-medium text-gray-400">
+                <a href="#sobre-mi" class="hover:text-white transition-colors">Sobre mí</a>
+                <a href="#proyecto-destacado" class="hover:text-white transition-colors">Caso de Estudio</a>
+                <a href="#contacto" class="hover:text-white transition-colors">Contacto</a>
+            </nav>
+            <a href="#contacto" class="text-xs font-semibold uppercase bg-gray-900 border border-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-all">
+                Hablemos
+            </a>
+        </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <main class="max-w-4xl mx-auto px-6 pt-16 pb-24">
-        <section class="max-w-2xl">
-            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-black leading-tight">
-                Construyo soluciones que integran sistemas, automatizan procesos y simplifican operaciones empresariales.
+    <!-- MAIN CONTAINER -->
+    <main class="max-w-5xl mx-auto px-6 pt-20 pb-32 w-full relative z-10">
+        
+        <!-- HERO SECTION -->
+        <section class="max-w-3xl">
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-[1.1] text-glow">
+                Construyo soluciones que <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-200 to-white">integran sistemas</span> y automatizan procesos empresariales.
             </h1>
-            <p class="mt-6 text-lg text-gray-600 leading-relaxed">
-                Software Developer especializado en el diseño de arquitecturas desacopladas e integración de sistemas legados y modernos. Enfocado en resolver problemas de negocio reales mediante ingeniería de software sólida.
+            <p class="mt-8 text-lg sm:text-xl text-gray-400 leading-relaxed max-w-2xl">
+                Software Developer especializado en arquitectura desacoplada, middleware e intercomunicación de sistemas críticos corporativos bajo entornos de alto rendimiento.
             </p>
-            <div class="mt-8 flex gap-4 text-sm font-medium">
-                <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full">.NET / C#</span>
-                <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full">Enterprise Integration</span>
-                <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full">System Architecture</span>
+            <div class="mt-10 flex flex-wrap gap-3 text-xs font-semibold tracking-wide uppercase">
+                <span class="px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full">.NET / C#</span>
+                <span class="px-4 py-1.5 bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 rounded-full">Enterprise Integration</span>
+                <span class="px-4 py-1.5 bg-gray-800 border border-gray-700/60 text-gray-300 rounded-full">Arquitectura Desacoplada</span>
             </div>
         </section>
 
-        <hr class="my-20 border-gray-100">
-
-        <!-- SOBRE MÍ -->
-        <section id="sobre-mi" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- SOBRE MÍ / QUÉ PROBLEMAS RESUELVO -->
+        <section id="sobre-mi" class="mt-36 grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
             <div class="md:col-span-1">
-                <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400">Qué problemas resuelvo</h2>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-500 flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Qué problemas resuelvo
+                </h2>
+                <p class="text-2xl font-bold text-white mt-3 tracking-tight">Más allá de escribir código de forma aislada.</p>
             </div>
-            <div class="md:col-span-2 space-y-6 text-gray-600 leading-relaxed">
+            <div class="md:col-span-2 space-y-6 text-gray-400 text-lg leading-relaxed">
                 <p>
-                    No me limito a escribir líneas de código de forma aislada. Mi valor radica en la capacidad para analizar el ecosistema técnico de una organización, identificar cuellos de botella operativos y estructurar componentes de software que comuniquen plataformas heterogéneas de manera transparente.
+                    Mi enfoque técnico se centra en el análisis integral del ecosistema corporativo de una organización. Identifico ineficiencias de comunicación y estructuro componentes de software diseñados para interconectar plataformas heterogéneas de manera transparente.
                 </p>
                 <p>
-                    Cuento con experiencia transformando lógicas complejas de negocio en servicios robustos y automatizados que se ejecutan de manera silenciosa, eficiente y escalable en entornos corporativos críticos.
+                    Transformo reglas complejas y flujos manuales propensos a errores en servicios automatizados de ejecución silenciosa, garantizando la escalabilidad operativa en entornos críticos de negocio.
                 </p>
             </div>
         </section>
 
-        <hr class="my-20 border-gray-100">
-
-        <!-- PROYECTO DESTACADO (CASO DE ESTUDIO) -->
-        <section id="proyecto-destacado" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="md:col-span-1">
-                <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400">Caso de Estudio</h2>
-                <p class="text-xs text-gray-400 mt-2 italic">Enterprise Integration Service</p>
+        <!-- CASO DE ESTUDIO DESTACADO -->
+        <section id="proyecto-destacado" class="mt-40">
+            <div class="mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-indigo-400 flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span> Caso de Estudio Principal
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-3">Enterprise Integration Service</h2>
             </div>
-            <div class="md:col-span-2 space-y-10">
+
+            <!-- GRID DEL CASO DE ESTUDIO -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 
-                <div>
-                    <h3 class="text-2xl font-bold text-black tracking-tight">Middleware de Integración de Datos Empresariales</h3>
-                    <p class="text-sm text-gray-400 mt-1">Servicio Windows • Endpoints HTTP • Comunicación JSON</p>
+                <!-- COLUMNA IZQUIERDA: RESUMEN DE TECNOLOGÍA -->
+                <div class="lg:col-span-1 bg-gray-900/40 border border-gray-800/80 rounded-2xl p-6 h-fit backdrop-blur-sm">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-6">Ficha del Sistema</h3>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <span class="text-gray-500 block text-xs uppercase font-medium">Componente Principal</span>
+                            <span class="text-gray-200 font-medium">Servicio Windows (Background Core)</span>
+                        </div>
+                        <hr class="border-gray-800/60">
+                        <div>
+                            <span class="text-gray-500 block text-xs uppercase font-medium">Interfaz de Comunicación</span>
+                            <span class="text-gray-200 font-medium">HTTP Endpoints Locales / JSON payloads</span>
+                        </div>
+                        <hr class="border-gray-800/60">
+                        <div>
+                            <span class="text-gray-500 block text-xs uppercase font-medium">Entornos Interconectados</span>
+                            <span class="text-gray-200 font-medium">Ecosistema WinDev &amp; Visual FoxPro ERP</span>
+                        </div>
+                        <hr class="border-gray-800/60">
+                        <div>
+                            <span class="text-gray-500 block text-xs uppercase font-medium">Modalidades de Carga</span>
+                            <span class="text-gray-200 font-medium">Batch Processing, On Demand &amp; Async Tasks</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="space-y-4">
-                    <h4 class="text-base font-semibold text-black">El Problema</h4>
-                    <p class="text-gray-600 leading-relaxed">
-                        Existía la necesidad crítica de intercomunicar de forma fluida y en tiempo real datos operacionales complejos estructurados entre el entorno principal WinDev y un sistema ERP transaccional legado basado en Visual FoxPro. La ausencia de un canal centralizado generaba duplicación de tareas y acoplamiento excesivo en las bases de datos.
-                    </p>
-                </div>
+                <!-- COLUMNA DERECHA: FLUJO E INGENIERÍA -->
+                <div class="lg:col-span-2 space-y-8">
+                    
+                    <!-- BLOQUE: PROBLEMA -->
+                    <div class="bg-gray-900/30 border border-gray-800/40 rounded-2xl p-8 hover:border-gray-700/60 transition-all duration-300">
+                        <h4 class="text-base font-bold text-white uppercase tracking-wider text-blue-400 mb-3">El Desafío Operativo</h4>
+                        <p class="text-gray-300 leading-relaxed">
+                            Existía la necesidad crítica de unificar la comunicación de datos estructurados entre el software transaccional moderno y un entorno ERP legado. La falta de un middleware automatizado provocaba desfases de información, duplicación manual de cargas y un alto riesgo de inconsistencia en las bases de datos corporativas.
+                        </p>
+                    </div>
 
-                <div class="space-y-4">
-                    <h4 class="text-base font-semibold text-black">Análisis y Diseño de la Solución</h4>
-                    <p class="text-gray-600 leading-relaxed">
-                        En lugar de crear conexiones directas e inseguras que expusieran el código fuente corporativo, diseñé e implementé una arquitectura totalmente desacoplada a través de un **Servicio de Windows**. 
-                    </p>
-                    <p class="text-gray-600 leading-relaxed">
-                        Este componente expone endpoints HTTP locales que aíslan por completo la lógica de negocio, procesando payloads mediante formato estructurado JSON.
-                    </p>
-                </div>
+                    <!-- BLOQUE: SOLUCIÓN -->
+                    <div class="bg-gray-900/30 border border-gray-800/40 rounded-2xl p-8 hover:border-gray-700/60 transition-all duration-300">
+                        <h4 class="text-base font-bold text-white uppercase tracking-wider text-indigo-400 mb-3">Ingeniería del Software e Integración</h4>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            Para mitigar el acoplamiento directo en bases de datos y resguardar la propiedad intelectual del código fuente, diseñé un **Middleware centralizado estructurado como Servicio de Windows**. 
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Este motor expone una capa de abstracción HTTP que procesa información mediante paquetes JSON estandarizados, encapsulando y protegiendo de manera íntegra toda la lógica de negocio empresarial.
+                        </p>
+                    </div>
 
-                <div class="space-y-4">
-                    <h4 class="text-base font-semibold text-black">Innovaciones Técnicas</h4>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2 leading-relaxed">
-                        <li><strong class="text-black">Detección automática de puertos:</strong> Algoritmo dinámico para identificar y reservar puertos disponibles en el servidor, evitando colisiones con otras aplicaciones locales.</li>
-                        <li><strong class="text-black">Modos de ejecución versátiles:</strong> El motor soporta cargas de procesamiento asíncronas en Background, ejecuciones programadas por lotes (Batch Mode) y peticiones inmediatas On Demand.</li>
-                    </ul>
-                </div>
+                    <!-- BLOQUE: INNOVACIONES -->
+                    <div class="bg-gray-900/30 border border-gray-800/40 rounded-2xl p-8 hover:border-gray-700/60 transition-all duration-300">
+                        <h4 class="text-base font-bold text-white uppercase tracking-wider text-emerald-400 mb-4">Logros Técnicos Clave</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full mt-2.5 shrink-0"></span>
+                                <div>
+                                    <strong class="text-white block">Detección Dinámica de Puertos locales</strong>
+                                    <span class="text-gray-400 text-sm">Algoritmo integrado encargado de analizar, verificar y reservar puertos de red disponibles en el host, evitando colisiones con infraestructuras preexistentes.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full mt-2.5 shrink-0"></span>
+                                <div>
+                                    <strong class="text-white block">Flexibilidad en Cargas de Trabajo</strong>
+                                    <span class="text-gray-400 text-sm">Soporte nativo multiplataforma optimizado para responder ante peticiones síncronas instantáneas, procesamientos asíncronos pesados e inyecciones masivas automatizadas por lotes.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div class="space-y-4">
-                    <h4 class="text-base font-semibold text-black">Resultados e Impacto</h4>
-                    <p class="text-gray-600 leading-relaxed">
-                        Se logró la automatización completa del flujo de datos sin necesidad de intervención humana. El negocio ahora opera con una plataforma extensible preparada para incorporar nuevos flujos y procesos empresariales con un esfuerzo mínimo de reingeniería, protegiendo al mismo tiempo la confidencialidad y propiedad intelectual de la solución central.
-                    </p>
-                </div>
+                    <!-- BLOQUE: RESULTADO -->
+                    <div class="bg-gradient-to-r from-blue-950/30 to-indigo-950/30 border border-blue-900/40 rounded-2xl p-8">
+                        <h4 class="text-base font-bold text-white uppercase tracking-wider text-white mb-3">Impacto del Negocio</h4>
+                        <p class="text-gray-300 leading-relaxed">
+                            Se eliminó al 100% la intervención humana en la sincronización, garantizando consistencia absoluta de la data empresarial. La solución heredada mutó a un ecosistema escalable y preparado para recibir nuevos componentes de forma modular y con un coste de mantenimiento drásticamente minimizado.
+                        </p>
+                    </div>
 
+                </div>
             </div>
         </section>
-
-        <hr class="my-20 border-gray-100">
 
         <!-- CONTACTO -->
-        <section id="contacto" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="md:col-span-1">
-                <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400">Contacto</h2>
-            </div>
-            <div class="md:col-span-2 space-y-6">
-                <p class="text-gray-600 leading-relaxed">
-                    Si estás buscando un desarrollador enfocado en diseñar soluciones, automatizar operaciones y estructurar arquitecturas limpias, hablemos.
-                </p>
-                <div class="flex flex-col gap-3 font-medium text-black">
-                    <div>
-                        <span class="text-gray-400 font-normal inline-block w-16">Email:</span> 
-                        <a href="mailto:diego7tec@gmail.com" class="border-b border-black hover:border-transparent transition">diego7tec@gmail.com</a>
-                    </div>
-                    <div>
-                        <span class="text-gray-400 font-normal inline-block w-16">GitHub:</span> 
-                        <a href="https://github.com/DiegoGavilanez" target="_blank" class="border-b border-black hover:border-transparent transition">github.com/DiegoGavilanez</a>
-                    </div>
-                </div>
+        <section id="contacto" class="mt-40 bg-gradient-to-b from-gray-900/50 to-gray-900/10 border border-gray-800/80 rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden">
+            <div class="absolute -bottom-48 -right-48 w-96 h-96 bg-blue-500/10 blur-3xl rounded-full pointer-events-none"></div>
+            <h2 class="text-3xl font-bold text-white tracking-tight">¿Buscando optimizar tus flujos empresariales?</h2>
+            <p class="mt-4 text-gray-400 max-w-xl mx-auto text-lg">
+                Si buscas un desarrollador capacitado para diseñar arquitecturas de integración sólidas, automatizar lógicas complejas de negocio y simplificar tus operaciones informáticas, conectemos.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center font-medium">
+                <a href="mailto:diego7tec@gmail.com" class="w-full sm:w-auto bg-white text-black px-6 py-3 rounded-xl hover:bg-gray-100 transition-colors shadow-lg">
+                    diego7tec@gmail.com
+                </a>
+                <a href="https://github.com/DiegoGavilanez" target="_blank" class="w-full sm:w-auto bg-gray-950 border border-gray-800 text-white px-6 py-3 rounded-xl hover:bg-gray-900 transition-colors flex items-center justify-center gap-2">
+                    Ver GitHub corporativo
+                </a>
             </div>
         </section>
+
     </main>
 
     <!-- FOOTER -->
-    <footer class="max-w-4xl mx-auto px-6 py-12 text-xs text-gray-400 border-t border-gray-50">
-        <p>&copy; 2026 Diego Gavilanez. Desarrollado con enfoque en simplicidad y rendimiento.</p>
+    <footer class="border-t border-gray-900 bg-black/40 backdrop-blur-sm z-10 relative">
+        <div class="max-w-5xl mx-auto px-6 py-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+            <p>&copy; 2026 Diego Gavilánez. Soluciones de Software de Alto Impacto.</p>
+            <p>Diseño enfocado en rendimiento, escalabilidad y simplicidad corporativa.</p>
+        </div>
     </footer>
 
 </body>
