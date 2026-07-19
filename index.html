@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diego Gavilánez | Software Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-[#111111] antialiased selection:bg-gray-100">
+
+    <!-- NAVBAR -->
+    <header class="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
+        <a href="#" class="font-semibold text-lg tracking-tight">diegogavilanez.com</a>
+        <nav class="space-x-6 text-sm text-gray-500">
+            <a href="#sobre-mi" class="hover:text-black transition">Sobre mí</a>
+            <a href="#proyecto-destacado" class="hover:text-black transition">Caso de Estudio</a>
+            <a href="#contacto" class="hover:text-black transition">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <main class="max-w-4xl mx-auto px-6 pt-16 pb-24">
+        <section class="max-w-2xl">
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-black leading-tight">
+                Construyo soluciones que integran sistemas, automatizan procesos y simplifican operaciones empresariales.
+            </h1>
+            <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+                Software Developer especializado en el diseño de arquitecturas desacopladas e integración de sistemas legados y modernos. Enfocado en resolver problemas de negocio reales mediante ingeniería de software sólida.
+            </p>
+            <div class="mt-8 flex gap-4 text-sm font-medium">
+                <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full">.NET / C#</span>
+                <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full">Enterprise Integration</span>
+                <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full">System Architecture</span>
+            </div>
+        </section>
+
+        <hr class="my-20 border-gray-100">
+
+        <!-- SOBRE MÍ -->
+        <section id="sobre-mi" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="md:col-span-1">
+                <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400">Qué problemas resuelvo</h2>
+            </div>
+            <div class="md:col-span-2 space-y-6 text-gray-600 leading-relaxed">
+                <p>
+                    No me limito a escribir líneas de código de forma aislada. Mi valor radica en la capacidad para analizar el ecosistema técnico de una organización, identificar cuellos de botella operativos y estructurar componentes de software que comuniquen plataformas heterogéneas de manera transparente.
+                </p>
+                <p>
+                    Cuento con experiencia transformando lógicas complejas de negocio en servicios robustos y automatizados que se ejecutan de manera silenciosa, eficiente y escalable en entornos corporativos críticos.
+                </p>
+            </div>
+        </section>
+
+        <hr class="my-20 border-gray-100">
+
+        <!-- PROYECTO DESTACADO (CASO DE ESTUDIO) -->
+        <section id="proyecto-destacado" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="md:col-span-1">
+                <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400">Caso de Estudio</h2>
+                <p class="text-xs text-gray-400 mt-2 italic">Enterprise Integration Service</p>
+            </div>
+            <div class="md:col-span-2 space-y-10">
+                
+                <div>
+                    <h3 class="text-2xl font-bold text-black tracking-tight">Middleware de Integración de Datos Empresariales</h3>
+                    <p class="text-sm text-gray-400 mt-1">Servicio Windows • Endpoints HTTP • Comunicación JSON</p>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-base font-semibold text-black">El Problema</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Existía la necesidad crítica de intercomunicar de forma fluida y en tiempo real datos operacionales complejos estructurados entre el entorno principal WinDev y un sistema ERP transaccional legado basado en Visual FoxPro. La ausencia de un canal centralizado generaba duplicación de tareas y acoplamiento excesivo en las bases de datos.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-base font-semibold text-black">Análisis y Diseño de la Solución</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        En lugar de crear conexiones directas e inseguras que expusieran el código fuente corporativo, diseñé e implementé una arquitectura totalmente desacoplada a través de un **Servicio de Windows**. 
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Este componente expone endpoints HTTP locales que aíslan por completo la lógica de negocio, procesando payloads mediante formato estructurado JSON.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-base font-semibold text-black">Innovaciones Técnicas</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2 leading-relaxed">
+                        <li><strong class="text-black">Detección automática de puertos:</strong> Algoritmo dinámico para identificar y reservar puertos disponibles en el servidor, evitando colisiones con otras aplicaciones locales.</li>
+                        <li><strong class="text-black">Modos de ejecución versátiles:</strong> El motor soporta cargas de procesamiento asíncronas en Background, ejecuciones programadas por lotes (Batch Mode) y peticiones inmediatas On Demand.</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-base font-semibold text-black">Resultados e Impacto</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Se logró la automatización completa del flujo de datos sin necesidad de intervención humana. El negocio ahora opera con una plataforma extensible preparada para incorporar nuevos flujos y procesos empresariales con un esfuerzo mínimo de reingeniería, protegiendo al mismo tiempo la confidencialidad y propiedad intelectual de la solución central.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <hr class="my-20 border-gray-100">
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="md:col-span-1">
+                <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400">Contacto</h2>
+            </div>
+            <div class="md:col-span-2 space-y-6">
+                <p class="text-gray-600 leading-relaxed">
+                    Si estás buscando un desarrollador enfocado en diseñar soluciones, automatizar operaciones y estructurar arquitecturas limpias, hablemos.
+                </p>
+                <div class="flex flex-col gap-3 font-medium text-black">
+                    <div>
+                        <span class="text-gray-400 font-normal inline-block w-16">Email:</span> 
+                        <a href="mailto:diego7tec@gmail.com" class="border-b border-black hover:border-transparent transition">diego7tec@gmail.com</a>
+                    </div>
+                    <div>
+                        <span class="text-gray-400 font-normal inline-block w-16">GitHub:</span> 
+                        <a href="https://github.com/DiegoGavilanez" target="_blank" class="border-b border-black hover:border-transparent transition">github.com/DiegoGavilanez</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="max-w-4xl mx-auto px-6 py-12 text-xs text-gray-400 border-t border-gray-50">
+        <p>&copy; 2026 Diego Gavilanez. Desarrollado con enfoque en simplicidad y rendimiento.</p>
+    </footer>
+
+</body>
+</html>
