@@ -79,7 +79,7 @@ svg {
     display: block;
 }
 
-svg:not(.integration-svg):not(.icon-sprite) {
+svg:not(.integration-svg):not(.icon-sprite):not(.icon-wa-fix) {
     width: 20px;
     height: 20px;
     fill: none;
@@ -959,4 +959,97 @@ h3 {
         justify-content: flex-start;
         flex-wrap: wrap;
     }
+}
+
+/* ==========================================================================
+   WhatsApp Floating Button & Tooltip - Refined
+   ========================================================================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #1ea952, #147a3a);
+    color: #ffffff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 8px 24px rgba(34, 197, 94, 0.3), 0 2px 6px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.whatsapp-float svg {
+    width: 26px !important;
+    height: 26px !important;
+    stroke: none !important;
+    fill: #ffffff !important;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 12px 28px rgba(34, 197, 94, 0.45), 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Tooltip Styling */
+.whatsapp-tooltip {
+    position: absolute;
+    right: 70px;
+    background: #0d1420;
+    color: #f8fafc;
+    padding: 8px 14px;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 6px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: opacity 250ms ease, transform 250ms ease, visibility 250ms ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -6px;
+    transform: translateY(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background: #0d1420;
+    border-right: 1px solid rgba(34, 197, 94, 0.3);
+    border-top: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+@media (max-width: 680px) {
+    .whatsapp-float {
+        bottom: 18px;
+        right: 18px;
+        width: 50px;
+        height: 50px;
+    }
+    .whatsapp-float svg {
+        width: 24px !important;
+        height: 24px !important;
+    }
+    .whatsapp-tooltip {
+        display: none;
+    }
+}
+
+/* Corrección específica para los iconos de WhatsApp en los botones */
+.icon-wa-fix {
+    stroke: none !important;
+    fill: currentColor !important;
 }
